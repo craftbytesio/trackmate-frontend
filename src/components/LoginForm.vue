@@ -8,7 +8,7 @@
             ></v-text-field>
             <v-text-field
                 label="Paswort"
-                v-model="passwort"
+                v-model="password"
                 type="password"
             ></v-text-field>
             <v-small class="red--text">{{ this.error }}</v-small>
@@ -35,7 +35,7 @@ export default Vue.extend({
     data() {
         return {
             email: null,
-            passwort: null,
+            password: null,
             error: null
         }
     },
