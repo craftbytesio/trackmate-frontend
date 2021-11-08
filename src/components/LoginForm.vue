@@ -28,6 +28,7 @@
 </template>
 
 ><script lang="ts">
+import AuthService from '@/service/AuthService';
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -41,7 +42,26 @@ export default Vue.extend({
     },
     methods: {
         async login(){
-            this.error = "Can't login " + this.email
+          const payload = {
+            email: this.email,
+            password: this.password
+          };
+          this.error = null;
+          try {
+            await AuthService.login(payload);
+            const authUser = await this.$store.dispatch("auth/getAuthUser");
+            if (authUser) {
+              this.$router.push("/home");
+            } else {
+              const error = Error(
+                  "Unable to fetch user after login, check your API settings."
+              );
+              error.name = "Fetch User";
+              throw error;
+            }
+          } catch (error){
+            this.error = error;
+          }
         }
     }
 })
