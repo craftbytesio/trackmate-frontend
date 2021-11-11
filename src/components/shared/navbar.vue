@@ -23,14 +23,15 @@
 
 <script>
 import Vue from 'vue'
-import AuthService from '@/service/AuthService';
 
 export default Vue.extend({
     name: 'NavBar',
-    async logout(){
-        await AuthService.logout();
-        this.$router.push('/login');
+    methods: {
+      logout: function() {
+        this.$store.dispatch('logout')
+        .then(() => this.$router.push({name: 'Login'}))
       }
+    }
 })
 </script>
 
