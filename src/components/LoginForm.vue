@@ -11,7 +11,7 @@
                 v-model="password"
                 type="password"
             ></v-text-field>
-            <v-small class="red--text">{{ this.error }}</v-small>
+            <small class="red--text">{{ this.error }}</small>
         </v-card-text>
         <v-card-actions>
             <v-btn
