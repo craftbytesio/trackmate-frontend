@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Hallo {{ this.$store.state.auth.user.name }}</h1>
+    <h1>Hallo {{ user.name }}</h1>
     <TracksDashCard />
     <v-btn
       fab
@@ -13,11 +13,15 @@
 <script lang="ts">
   import Vue from 'vue'
   import TracksDashCard from '@/components/TracksDashCard.vue'
+  import {mapGetters} from "vuex";
 
   export default Vue.extend({ 
     name: 'Home',
     components: {
       TracksDashCard,
+    },
+    computed: {
+      ...mapGetters({user: 'getCurrentUser'}),
     },
   })
 </script>
