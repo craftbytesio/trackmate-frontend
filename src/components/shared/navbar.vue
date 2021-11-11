@@ -5,7 +5,7 @@
       bottom
       color="teal"
       >
-      <v-btn to="/">
+      <v-btn to="/home">
         <span>Home</span>
         <v-icon>mdi-home</v-icon>
       </v-btn>
