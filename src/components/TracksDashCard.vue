@@ -18,7 +18,6 @@
         ></v-sparkline>
         </v-sheet>
         <v-card-text class="pt-0">
-            User action
             <v-simple-table>
                 <template v-slot:default>
                 <thead>
@@ -58,6 +57,7 @@
 import Vue from 'vue'
 import {apiClient} from '@/service/API'
 import moment from 'moment'
+import {mapGetters} from "vuex";
 
 export default Vue.extend({
     name: 'TracksDashCard',
@@ -113,7 +113,10 @@ export default Vue.extend({
         .then((response) => {
           this.tracks = response.data.data
         })
-    }
+    },
+    computed: {
+      ...mapGetters({user: 'getCurrentUser'}),
+    },
 })
 
 </script>
