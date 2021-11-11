@@ -7,7 +7,7 @@
       >
       <v-btn to="/">
         <span>Home</span>
-        <v-icon>mdi-history</v-icon>
+        <v-icon>mdi-home</v-icon>
       </v-btn>
       <v-btn to="/about">
         <span>About</span>
