@@ -13,7 +13,15 @@
         <span>About</span>
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-      <v-btn @click="logout">
+      <v-btn
+          to="/login"
+      >
+        <span>Login</span>
+        <v-icon>mdi-login</v-icon>
+      </v-btn>
+      <v-btn
+          @click="logout"
+      >
         <span>Logout</span>
         <v-icon>mdi-logout</v-icon>
       </v-btn>
