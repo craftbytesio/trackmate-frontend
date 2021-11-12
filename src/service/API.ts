@@ -10,18 +10,17 @@ export const apiClient = axios.create({
  * Add a response interceptor
  */
 apiClient.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  function (error) {
-    if (
-      error.response &&
-      [401, 419].includes(error.response.status) &&
-      store.getters["auth/authUser"] &&
-      !store.getters["auth/guest"]
-    ) {
-      store.dispatch("auth/logout");
+    (response) => {
+      return response;
+    },
+    function (error) {
+      if (
+          error.response &&
+          [401, 419].includes(error.response.status) &&
+          store.getters["getCurrentUser"]
+      ) {
+        store.dispatch("logout");
+      }
+      return Promise.reject(error);
     }
-    return Promise.reject(error);
-  }
 );
