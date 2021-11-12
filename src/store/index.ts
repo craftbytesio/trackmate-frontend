@@ -32,7 +32,6 @@ export default new Vuex.Store({
   getters: {
     getCurrentUser: state => state.user,
     getTracks: state => state.tracks,
-    getCount: state => state.count,
     isLoggedIn: state => state.isLoggedIn,
   },
   actions: {
