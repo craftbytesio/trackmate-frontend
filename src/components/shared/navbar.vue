@@ -14,12 +14,14 @@
         <v-icon>mdi-heart</v-icon>
       </v-btn>
       <v-btn
+          v-if="!isLoggedIn"
           to="/login"
       >
         <span>Login</span>
         <v-icon>mdi-login</v-icon>
       </v-btn>
       <v-btn
+          v-if="isLoggedIn"
           @click="logout"
       >
         <span>Logout</span>
@@ -39,7 +41,10 @@ export default Vue.extend({
         this.$store.dispatch('logout')
         .then(() => this.$router.push({name: 'Login'}))
       }
-    }
+    },
+  computed : {
+    isLoggedIn : function(){ return this.$store.getters.isLoggedIn}
+  },
 })
 </script>
 
