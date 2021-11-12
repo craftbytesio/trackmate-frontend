@@ -2,7 +2,7 @@
     <form @submit.prevent="login">
         <v-card-text>
             <v-text-field
-                label="Email"
+                label="E-Mail"
                 v-model="email"
                 type="email"
             ></v-text-field>
