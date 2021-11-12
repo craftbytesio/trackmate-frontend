@@ -1,10 +1,14 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import createPersistedState from 'vuex-persistedstate';
 import AuthService from '@/service/AuthService';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  plugins: [createPersistedState({
+    storage: window.sessionStorage,
+  })],
   state: {
     status: '',
     user: {},
@@ -59,6 +63,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         AuthService.logout().then(
             resp => {
+              sessionStorage.clear();
               commit('logout')
               resolve(resp)
             }
