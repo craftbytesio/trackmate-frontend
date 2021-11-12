@@ -7,7 +7,7 @@
                 type="email"
             ></v-text-field>
             <v-text-field
-                label="Paswort"
+                label="Passwort"
                 v-model="password"
                 type="password"
             ></v-text-field>
