@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import {mapGetters, mapMutations} from "vuex";
 
 export default Vue.extend({
   name: 'Start',

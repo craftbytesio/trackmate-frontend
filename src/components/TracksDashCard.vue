@@ -53,7 +53,7 @@
     </v-card>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import {apiClient} from '@/service/API'
 import moment from 'moment'
@@ -63,11 +63,11 @@ export default Vue.extend({
     name: 'TracksDashCard',
     data: () => ({
       tracks: null,
-      chartDataLabels: [] as any[string],
-      chartDataValues: [] as any[number],
+      chartDataLabels: [],
+      chartDataValues: [],
     }),
     methods:{
-        getIcon(type:string){
+        getIcon(type){
             switch (type) {
                 case 'Swimming':
                     return 'mdi-swim'
@@ -75,7 +75,7 @@ export default Vue.extend({
                     return 'mdi-run-fast'
             }
         },
-        getAssesmentIcon(type:number){
+        getAssesmentIcon(type){
             switch (type) {
                 case 0:
                     return 'mdi-emoticon-sick-outline'
@@ -90,14 +90,12 @@ export default Vue.extend({
             }
         },
 
-        getGermanDate: function (date:string) {
+        getGermanDate: function (date) {
             return moment(date, 'YYYY-MM-DD').format('DD.MM.YYYY');
         },
     },
     watch: {
         tracks: function(items) {
-            let data: [number]
-
             items.forEach(element => {
                 this.chartDataLabels.push(this.getGermanDate(element.track_date))
                 this.chartDataValues.push(element.distance_m)

@@ -1,14 +1,14 @@
 import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
+import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Login from '@/views/Login.vue'
 import Start from "@/views/Start.vue";
-import store from '@/store/index.ts'
+import store from '@/store/index.js'
 
 Vue.use(VueRouter)
 
-const routes: Array<RouteConfig> = [
+const routes = [
   {
     path: '/',
     name: 'Start',
@@ -53,3 +53,4 @@ router.beforeEach((to, from, next) => {
 })
 
 export default router
+

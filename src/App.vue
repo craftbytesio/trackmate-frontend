@@ -7,7 +7,7 @@
   </v-app>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import NavBar from './components/shared/navbar.vue';
 
