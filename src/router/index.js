@@ -37,6 +37,9 @@ const routes = [
     path: '/addTrack',
     name: 'addTrack',
     component: AddTrack,
+    meta: {
+      requiresAuth: true,
+    }
   }
 ]
 
