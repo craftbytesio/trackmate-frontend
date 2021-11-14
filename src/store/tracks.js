@@ -1,3 +1,5 @@
+import {apiClient} from '@/service/API'
+
 const DB_NAME = 'TRACKMATE';
 const DB_VERSION = 1;
 const TABLE_NAME = 'tracks'
@@ -38,6 +40,7 @@ export default {
 
             // open db connection
             let db = await this.getDB();
+            this.checkForUpdate();
 
             return new Promise((resolve) => {
                 
@@ -60,9 +63,9 @@ export default {
             });
         },
 
-        async saveCat(track) {
+        async saveTrack(track) {
 
-            let db = await this.getDb();
+            let db = await this.getDB();
     
             return new Promise(resolve => {
     
@@ -72,15 +75,17 @@ export default {
                 };
     
                 let store = trans.objectStore(TABLE_NAME);
-                store.put(track);
-    
+                store.put(track)
+                console.log('Save in real DB');
+                //apiClient.post('/tracks', track)
+
             });
         
         },
 
-        async deleteCat(track) {
+        async deleteTrack(track) {
 
-            let db = await this.getDb();
+            let db = await this.getDB();
     
             return new Promise(resolve => {
     
@@ -93,5 +98,28 @@ export default {
                 store.delete(track.id);
             });	
         },
+
+        async checkForUpdate() {
+            return new Promise(resolve => {
+                if(navigator.onLine) {
+                    let onlineTracks = [];
+
+                    apiClient
+                        .get('/tracks')
+                        .then((response) => {
+                            onlineTracks = response.data.data
+                            
+                            onlineTracks.forEach(element => {
+                                this.saveTrack(element);
+                            });
+
+                            resolve();
+                        })
+
+                } else {
+                    console.log('App ist offline');
+                }
+            })
+        }
 
 }

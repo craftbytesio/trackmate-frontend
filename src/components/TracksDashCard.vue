@@ -55,7 +55,6 @@
 
 <script>
 import Vue from 'vue'
-//import {apiClient} from '@/service/API'
 import tracks from '@/store/tracks'
 import moment from 'moment'
 import {mapGetters} from "vuex";
@@ -72,6 +71,10 @@ export default Vue.extend({
             switch (type) {
                 case 'Swimming':
                     return 'mdi-swim'
+                case 'Biking':
+                    return 'mdi-bike-fast'
+                case 'Running':
+                    return 'mdi-run-fast'
                 default:
                     return 'mdi-run-fast'
             }

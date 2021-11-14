@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import {apiClient} from "../service/API";
+import tracks from '@/store/tracks'
 
 export default {
   name: "AddTrackForm",
@@ -78,9 +78,7 @@ export default {
         user_id: this.$store.getters.getCurrentUser.id,
       }
       this.error = null
-      apiClient.post('/tracks', payload)
-        .then(() => this.$router.push({name: 'Home'}))
-        .catch((error) => this.error = error)
+      tracks.saveTrack(payload);
     }
   }
 }
