@@ -55,7 +55,8 @@
 
 <script>
 import Vue from 'vue'
-import {apiClient} from '@/service/API'
+//import {apiClient} from '@/service/API'
+import tracks from '@/store/tracks'
 import moment from 'moment'
 import {mapGetters} from "vuex";
 
@@ -106,11 +107,7 @@ export default Vue.extend({
         }
     },
     async mounted() {
-        apiClient
-        .get('/tracks')
-        .then((response) => {
-          this.tracks = response.data.data
-        })
+        this.tracks = await tracks.getAllTracks()
     },
     computed: {
       ...mapGetters({user: 'getCurrentUser'}),
