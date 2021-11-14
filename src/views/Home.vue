@@ -6,7 +6,10 @@
       fab
       class="myFAB"
       color="primary"
-    ><v-icon>mdi-plus</v-icon></v-btn>
+      to="/addTrack"
+    >
+      <v-icon>mdi-plus</v-icon>
+    </v-btn>
   </div>
 </template>
 
