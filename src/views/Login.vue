@@ -11,7 +11,7 @@
     </v-card>
 </template>
 
-<script lang="ts">
+<script">
 import Vue from 'vue'
 import LoginForm from '@/components/LoginForm.vue'
 
