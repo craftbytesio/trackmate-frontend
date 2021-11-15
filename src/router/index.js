@@ -7,6 +7,7 @@ import Start from "../views/Start.vue"
 import store from '../store/index.js'
 import AddTrack from "../views/AddTrack"
 import Settings from '../views/Settings'
+import i18n from '../plugins/i18n'
 
 Vue.use(VueRouter)
 
@@ -59,6 +60,8 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  // Set language of router
+  i18n.locale = store.getters.getCurrentUser.language
   if(to.matched.some(record => record.meta.requiresAuth)) {
     if (store.getters.isLoggedIn) {
       next()
