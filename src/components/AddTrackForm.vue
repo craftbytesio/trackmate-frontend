@@ -2,29 +2,29 @@
   <form @submit.prevent="addTrack">
     <v-card-text>
       <v-text-field
-          label="Datum"
+          :label="$t('dateLabel')"
           v-model="track_date"
           type="date"
       ></v-text-field>
       <v-text-field
-          label="Distanz in Meter"
+          :label="$t('distance_mLabel')"
           v-model="distance_m"
           type="number"
       ></v-text-field>
       <v-select
           v-model="sport_type"
-          :items="sport_types"
+          :items="$t('sportTypes')"
           item-text="name"
           item-value="value"
-          label="Sportart wählen"
+          :label="$t('sport_typesSelect')"
           single-line
       ></v-select>
       <v-select
           v-model="assessment"
-          :items="assessments"
+          :items="$t('assessments')"
           item-text="name"
           item-value="value"
-          label="Bewertung setzen"
+          :label="$t('assessmentsSelect')"
           single-line
       ></v-select>
       <small class="red--text">{{ this.error }}</small>
@@ -37,7 +37,7 @@
           color="primary"
           @click="addTrack"
       >
-        Hinzufügen
+        {{ $t('addLabel') }}
       </v-btn>
     </v-card-actions>
   </form>
@@ -55,17 +55,6 @@ export default {
       sport_type: null,
       assessment: null,
       error: null,
-      sport_types: [
-        {name: 'Schwimmen', value: 'Swimming'},
-        {name: 'Radfahren', value: 'Biking'},
-        {name: 'Laufen', value: 'Running'}
-      ],
-      assessments: [
-        {name: 'Neutral', value: '0'},
-        {name: 'Schlecht', value: '1'},
-        {name: 'Mittel', value: '2'},
-        {name: 'Gut', value: '3'}
-      ],
     }
   },
   methods: {
