@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import Start from "../views/Start.vue"
 import store from '../store/index.js'
 import AddTrack from "../views/AddTrack"
+import Settings from '../views/Settings'
 
 Vue.use(VueRouter)
 
@@ -40,7 +41,15 @@ const routes = [
     meta: {
       requiresAuth: true,
     }
-  }
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: Settings,
+    meta: {
+      requiresAuth: true,
+    }
+  },
 ]
 
 const router = new VueRouter({
