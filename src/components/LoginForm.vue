@@ -15,7 +15,7 @@
                 type="email"
             ></v-text-field>
             <v-text-field
-                label="Passwort"
+                :label="$t('loginPasswordLabel')"
                 v-model="password"
                 type="password"
             ></v-text-field>

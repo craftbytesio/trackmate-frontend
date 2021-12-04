@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import createPersistedState from 'vuex-persistedstate';
 import AuthService from '@/service/AuthService';
+import {apiClient} from '../service/API'
 
 Vue.use(Vuex);
 
@@ -32,6 +33,9 @@ export default new Vuex.Store({
       state.status = ''
       state.user = {}
     },
+    changeUserLanguage(state, locale){
+        state.user.language = locale
+    }
   },
   getters: {
     getCurrentUser: state => state.user,
@@ -75,6 +79,20 @@ export default new Vuex.Store({
             }
         )
       })
+    },
+    updateUserLanguage({commit, getters}, locale){
+        return new Promise((resolve, reject) => {
+            commit('changeUserLanguage', locale)
+            let user = getters.getCurrentUser
+            apiClient.put('/users/' + user.id, user)
+                .then(response => {
+                    resolve(response)
+                })
+                .catch(error => {
+                    console.log(error)
+                    reject(error)
+                })
+        })
     }
   }
 });

@@ -27,6 +27,13 @@
         <span>Logout</span>
         <v-icon>mdi-logout</v-icon>
       </v-btn>
+      <v-btn
+          v-if="isLoggedIn"
+          to="/settings"
+      >
+        <span>{{ $t('settings') }}</span>
+        <v-icon>mdi-cog</v-icon>
+      </v-btn>
     </v-bottom-navigation>
 </template>
 
