@@ -22,14 +22,14 @@
                 <template v-slot:default>
                 <thead>
                     <tr>
-                    <th>Type</th>
+                    <th>{{ $t('sport_typeColHeader')}}</th>
                     <th class="text-left">
-                        Date
+                      {{ $t('dateLabel') }}
                     </th>
                     <th class="text-left">
-                        Distance
+                      {{ $t('distance_mColHeader') }}
                     </th>
-                    <th>Feel</th>
+                    <th>{{ $t('assessmentLabel') }}</th>
                     </tr>
                 </thead>
                 <tbody>

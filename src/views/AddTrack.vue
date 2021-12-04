@@ -5,7 +5,7 @@
       class="mx-auto mt-5"
       max-width="400"
   >
-    <v-card-title>Track hinzufügen</v-card-title>
+    <v-card-title>{{ $t('addTrackTitle')}}</v-card-title>
     <AddTrackForm class="p-5 bg-white border rounded shadow" />
 
   </v-card>

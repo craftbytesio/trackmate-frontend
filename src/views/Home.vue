@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Hallo {{ user.name }}</h1>
+    <h1>{{ $t('greetingHome')}} {{ user.name }}</h1>
     <TracksDashCard />
     <v-btn
       fab

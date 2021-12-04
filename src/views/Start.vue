@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Wilkommen bei TrackMate!</h1>
+    <h1>{{ $t('greetingStart') }}</h1>
   </div>
 </template>
 
