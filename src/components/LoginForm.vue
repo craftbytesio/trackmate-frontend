@@ -1,4 +1,12 @@
 <template>
+  <v-card
+      elevation="2"
+      shaped
+      class="mx-auto mt-5"
+      max-width="400"
+      :loading="loading"
+  >
+    <v-card-title>Login</v-card-title>
     <form @submit.prevent="login">
         <v-card-text>
             <v-text-field
@@ -25,6 +33,7 @@
             </v-btn>
         </v-card-actions>
     </form>
+  </v-card>
 </template>
 <script>
 import Vue from 'vue'
@@ -35,11 +44,13 @@ export default Vue.extend({
         return {
             email: null,
             password: null,
-            error: null
+            error: null,
+            loading: false,
         }
     },
     methods: {
         login(){
+          this.loading = true;
           const payload = {
             email: this.email,
             password: this.password
@@ -47,7 +58,10 @@ export default Vue.extend({
           this.error = null;
           this.$store.dispatch('login', payload)
           .then(() => this.$router.push({name: 'Home'}))
-          .catch(err => this.error = err);
+          .catch((err) => {
+            this.error = err;
+            this.loading = false;
+          });
         }
     }
 })
