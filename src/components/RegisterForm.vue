@@ -61,7 +61,14 @@ export default {
           language: this.language
         }
         apiClient.post('/users', payload)
-            .then(() => this.$router.push({name: 'Login'}))
+            .then(() => {
+              const alert = {
+                message: this.$t("successfulRegistration"),
+                color: 'green'
+              }
+              this.$store.commit('showAlert', alert)
+              this.$router.push({name: 'Login'})
+            })
             .catch((error) => {
               console.log(error)
               this.error_password = error.response.data.errors.password[0]

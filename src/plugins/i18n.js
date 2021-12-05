@@ -36,6 +36,7 @@ const messages = {
         registerButtonLabel: 'Register now',
         registerHint: 'Not registered yet? Create an account!',
         confirmationPassword: 'Password confirmation',
+        successfulRegistration: 'Registration successful! You are now able to login.',
     },
     'de': {
         greetingHome: 'Hallo',
@@ -69,6 +70,7 @@ const messages = {
         registerButtonLabel: 'Jetzt registrieren',
         registerHint: 'Noch keinen Account? Registriere dich jetzt!',
         confirmationPassword: 'Password Bestätigung',
+        successfulRegistration: 'Registrierung erfolgreich! Du kannst dich jetzt einloggen.',
     }
 }
 
