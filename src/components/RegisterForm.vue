@@ -60,8 +60,6 @@ export default {
           password: this.password,
           language: this.language
         }
-        console.log('creating user')
-        console.log(payload)
         apiClient.post('/users', payload)
             .then(() => this.$router.push({name: 'Login'}))
             .catch((error) => {
