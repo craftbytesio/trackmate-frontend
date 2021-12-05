@@ -33,6 +33,9 @@
             </v-btn>
         </v-card-actions>
     </form>
+    <div class="d-flex justify-center pb-3 mt-3">
+      <small><a href="/register">{{ $t('registerHint')}}</a></small>
+    </div>
   </v-card>
 </template>
 <script>
