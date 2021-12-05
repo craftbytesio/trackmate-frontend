@@ -8,6 +8,7 @@ import store from '../store/index.js'
 import AddTrack from "../views/AddTrack"
 import Settings from '../views/Settings'
 import i18n from '../plugins/i18n'
+import Register from "../views/Register";
 
 Vue.use(VueRouter)
 
@@ -50,6 +51,11 @@ const routes = [
     meta: {
       requiresAuth: true,
     }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
   },
 ]
 
