@@ -15,6 +15,7 @@ export default new Vuex.Store({
     user: {},
     isLoggedIn: false,
     tracks: [],
+    alert: {},
   },
   mutations: {
     auth_request(state) {
@@ -35,7 +36,10 @@ export default new Vuex.Store({
     },
     changeUserLanguage(state, locale){
         state.user.language = locale
-    }
+    },
+    showAlert(state, alert) {
+        state.alert = alert;
+    },
   },
   getters: {
     getCurrentUser: state => state.user,
