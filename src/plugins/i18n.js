@@ -37,6 +37,7 @@ const messages = {
         registerHint: 'Not registered yet? Create an account!',
         confirmationPassword: 'Password confirmation',
         successfulRegistration: 'Registration successful! You are now able to login.',
+        passwordDoNotMatch: 'Passwords do not match!',
     },
     'de': {
         greetingHome: 'Hallo',
@@ -71,6 +72,7 @@ const messages = {
         registerHint: 'Noch keinen Account? Registriere dich jetzt!',
         confirmationPassword: 'Password Bestätigung',
         successfulRegistration: 'Registrierung erfolgreich! Du kannst dich jetzt einloggen.',
+        passwordDoNotMatch: 'Passwörter sind nicht gleich!',
     }
 }
 

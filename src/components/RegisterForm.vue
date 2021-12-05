@@ -78,7 +78,11 @@ export default {
         this.password = null
         this.passwordConfirmation = null
 
-        return alert('Passwords do not match')
+        const alert = {
+          message: this.$t("passwordDoNotMatch"),
+          color: 'red'
+        }
+        this.$store.commit('showAlert', alert)
       }
     }
   },
