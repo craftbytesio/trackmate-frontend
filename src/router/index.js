@@ -61,7 +61,11 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   // Set language of router
-  i18n.locale = store.getters.getCurrentUser.language
+  if (store.getters.isLoggedIn) {
+    i18n.locale = store.getters.getCurrentUser.language
+  } else {
+    i18n.locale = 'de';
+  }
   if(to.matched.some(record => record.meta.requiresAuth)) {
     if (store.getters.isLoggedIn) {
       next()
