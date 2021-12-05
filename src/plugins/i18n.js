@@ -32,6 +32,10 @@ const messages = {
         addTrackTitle: 'Add a track',
         selectLanguageLabel: 'Select your language',
         columnSportType: 'Type',
+        register: 'Register',
+        registerButtonLabel: 'Register now',
+        registerHint: 'Not registered yet? Create an account!',
+        confirmationPassword: 'Password confirmation',
     },
     'de': {
         greetingHome: 'Hallo',
@@ -61,6 +65,10 @@ const messages = {
         addTrackTitle: 'Track hinzufügen',
         selectLanguageLabel: 'Sprache wählen',
         columnSportType: 'Art',
+        register: 'Registrierung',
+        registerButtonLabel: 'Jetzt registrieren',
+        registerHint: 'Noch keinen Account? Registriere dich jetzt!',
+        confirmationPassword: 'Password Bestätigung',
     }
 }
 
