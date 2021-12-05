@@ -31,7 +31,8 @@ authClient.interceptors.response.use(
       await authClient.get("/sanctum/csrf-cookie");
       return await authClient.post("/login", payload);
     },
-    logout() {
+    async logout() {
+      await authClient.get("/sanctum/csrf-cookie");
       return authClient.post("/logout");
     },
     getAuthUser() {
