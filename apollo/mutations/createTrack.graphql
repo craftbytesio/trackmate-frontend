@@ -1,0 +1,7 @@
+mutation createTrack($assessment: Int! $distanceM: Int!, $date: Date!) {
+  createTrack(assessment: $assessment, distanceM: $distanceM, date: $date){
+    track{
+      id
+    }
+  }
+}

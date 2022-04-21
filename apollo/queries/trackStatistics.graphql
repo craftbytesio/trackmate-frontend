@@ -1,0 +1,8 @@
+query {
+  trackStatistics {
+    count
+    weeklyCount
+    sum
+    avg
+  }
+}
