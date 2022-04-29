@@ -10,7 +10,9 @@
 
       <div class="stat bg-base-200">
         <div class="stat-figure text-secondary text-2xl">
-          <NuxtLink to="/tracks/create"><FontAwesomeIcon icon="fa-regular fa-square-plus" /></NuxtLink>
+          <NuxtLink to="/tracks/create">
+            <i class="fa-solid fa-square-plus"></i>
+          </NuxtLink>
         </div>
         <div class="stat-title text-2xl text-info font-medium mb-4">Total Tracks</div>
         <div class="stat-value">{{ trackStatistics.count }}</div>
