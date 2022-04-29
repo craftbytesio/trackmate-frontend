@@ -1,7 +1,7 @@
 <template>
   <div class="navbar-center bg-base-300 py-3 mt-5 mb-10 mx-3 shadow-xl rounded-box flex justify-between items-center">
     <div>
-      <NuxtLink to='/' class="btn btn-ghost normal-case text-xl">TrackMate</NuxtLink>
+      <NuxtLink to='/' class="ml-5 normal-case text-xl font-bold">TrackMate</NuxtLink>
     </div>
     <div v-if='authUser' class='mr-3'>
       <div class="dropdown dropdown-end">
