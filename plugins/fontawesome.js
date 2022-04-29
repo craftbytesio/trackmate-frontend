@@ -1,16 +1,18 @@
-import Vue from 'vue'
-import { library, config } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+/* Import all the font awesome goodness */
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+// loads all the "solid" icons
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
+import { dom } from '@fortawesome/fontawesome-svg-core'
 
-// This is important, we are going to let Nuxt.js worry about the CSS
-config.autoAddCss = false
+// loads only the "twitter" brand icon
+// import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
-// You can add your icons directly in this plugin. See other examples for how you
-// can add other styles or just individual icons.
-library.add(fas)
-library.add(far)
+// add each of the imported icons into the app
+library.add(fas); // can be a list of all the icons e.g. (fas, fab, faTwitter, etc)
 
-// Register the component globally
-Vue.component('FontAwesomeIcon', FontAwesomeIcon)
+// to use component based icons
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+// to use class based icons
+dom.watch();
