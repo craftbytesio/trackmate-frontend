@@ -28,9 +28,6 @@
         </div>
       </div>
       <div class="stat bg-base-200">
-        <div class="stat-figure text-secondary text-2xl">
-          <FontAwesomeIcon icon="fa-solid fa-info" />
-        </div>
         <div class="stat-title text-2xl text-info font-medium mb-4">Average Track</div>
         <div class="stat-value">{{ trackStatistics.avg }} m</div>
       </div>
