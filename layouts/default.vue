@@ -4,6 +4,5 @@
     <div class='m-5'>
       <Nuxt />
     </div>
-    <FooterNavigation />
   </div>
 </template>
