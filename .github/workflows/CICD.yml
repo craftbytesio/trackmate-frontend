@@ -15,10 +15,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build artifact
+    - name: Setup Node
       uses: actions/setup-node@v3
-    - run: npm install --force
-    - run: nuxt generate
-    - run: nuxt build
-    - run: ls
+      with:
+        node-version: 16.x
+        cache: 'npm'
+    - name: Build artifact
+      uses: actions/checkout@v3
+      with:
+        script: |
+          ls
