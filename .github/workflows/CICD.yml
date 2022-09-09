@@ -18,10 +18,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build artifact
       uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
+    - run: npm install --force
     - run: nuxt generate
     - run: nuxt build
     - run: ls
