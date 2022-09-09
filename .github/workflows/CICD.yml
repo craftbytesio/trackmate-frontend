@@ -10,7 +10,7 @@ on:
 jobs:
 
   build:
-    name: 📤 Deploy to production
+    name: 🛠 Build artifact
 
     runs-on: ubuntu-latest
 
@@ -19,9 +19,15 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
-        cache: 'npm'
     - name: Build artifact
       uses: actions/checkout@v3
       with:
         script: |
           ls
+  deploy:
+    name: 📤 Deploy to production
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Copy artifact to server
