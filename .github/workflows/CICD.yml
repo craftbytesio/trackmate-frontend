@@ -18,8 +18,8 @@ jobs:
         - uses: actions/checkout@master
         - uses: actions/setup-node@master
         - run: npm install
-        - run: nuxt generate
-        - run: nuxt build
+        - run: npm generate
+        - run: npm build
         - run: ls
 
   # deploy:
