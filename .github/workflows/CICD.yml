@@ -17,9 +17,11 @@ jobs:
     steps:
         - uses: actions/checkout@master
         - uses: actions/setup-node@master
+          with:
+            cache: 'npm'
         - run: npm install
-        - run: npm generate
-        - run: npm build
+        - run: nuxt generate
+        - run: nuxt build
         - run: ls
 
   # deploy:
