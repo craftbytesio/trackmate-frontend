@@ -21,9 +21,9 @@ jobs:
         node-version: 16.x
     - name: Build artifact
       uses: actions/checkout@v3
-      with:
-        script: |
-          ls
+    - run: ls
+    
+
   # deploy:
     # name: 📤 Deploy to production
     
