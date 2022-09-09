@@ -3,7 +3,7 @@
     <div class='hero bg-base-200 rounded-box'>
       <div class='hero-content text-center content-center'>
         <div class='max-w-md flex-col my-5'>
-          <h1 class='text-3xl font-bold'>👋</h1>
+          <h1 class='text-3xl font-bold'>Hello 👋</h1>
           <p class='mt-5 text-xl'>This is <span class='font-mono text-accent-focus'>TrackMate</span>!</p>
           <p class='mt-2 mb-5'>A simple web app to track your trainings! 🏊</p>
           <h2 class='text-xl font-mono'>FEATURES</h2>
