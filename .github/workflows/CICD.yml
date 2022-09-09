@@ -24,10 +24,10 @@ jobs:
       with:
         script: |
           ls
-  deploy:
-    name: 📤 Deploy to production
+  # deploy:
+    # name: 📤 Deploy to production
     
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
     
-    steps:
-      - name: Copy artifact to server
+    # steps:
+      # - name: Copy artifact to server
