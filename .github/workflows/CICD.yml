@@ -19,10 +19,10 @@ jobs:
         - uses: actions/setup-node@master
           with:
             cache: 'npm'
+        - run: ls
         - run: npm install
         - run: nuxt generate
         - run: nuxt build
-        - run: ls
 
   # deploy:
     # name: 📤 Deploy to production
