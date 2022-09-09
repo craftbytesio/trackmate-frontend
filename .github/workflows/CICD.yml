@@ -11,24 +11,29 @@ jobs:
 
   build:
     name: 🛠 Build artifact
-
     runs-on: ubuntu-latest
-
     steps:
         - uses: actions/checkout@master
+        - run: |
+            touch .env
+            echo API_BASE_URL=${{ secrets.API_BASE_URL }} >> .env
         - uses: actions/setup-node@master
           with:
             cache: 'npm'
-        - run: ls
         - run: npm install
         - run: npm run generate
         - run: npm run build
-        - run: ls
 
-  # deploy:
-    # name: 📤 Deploy to production
-    
-    # runs-on: ubuntu-latest
-    
-    # steps:
-      # - name: Copy artifact to server
+  deploy:
+    name: 📤 Deploy to production
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Copy artifact to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "dist"
+          target: ${{ secrets.APP_PATH }}
