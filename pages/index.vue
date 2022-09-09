@@ -6,7 +6,6 @@
           <h1 class='text-3xl font-bold'>Hello 👋</h1>
           <p class='mt-5 text-xl'>This is <span class='font-mono text-accent-focus'>TrackMate</span>!</p>
           <p class='mt-2 mb-5'>A simple web app to track your trainings! 🏊</p>
-          <h2 class='text-xl font-mono'>FEATURES</h2>
           <div class='content-center mt-5 mb-10'>
             <div class='flex flex-row h-20 m-5 rounded-lg bg-accent text-accent-content items-center'>
               <div
