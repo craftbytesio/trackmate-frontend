@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-center bg-base-300 py-3 mt-5 mb-10 mx-3 shadow-xl rounded-box flex justify-between items-center">
+  <div class='navbar-center bg-base-300 py-3 mt-5 mb-10 shadow-xl rounded-box flex justify-between items-center'>
     <div>
       <NuxtLink to='/' class="ml-5 normal-case text-xl font-bold">TrackMate</NuxtLink>
     </div>
